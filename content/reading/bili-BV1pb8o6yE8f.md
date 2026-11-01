@@ -128,43 +128,5 @@ flowchart TD
     F --> F2[软件工程未死]
 ```
 
-## 值得继续思考的问题
-
-- 讲者说“你的想象力限制了你的 agent 的上限” [31:58](https://www.bilibili.com/video/BV1pb8o6yE8f?t=1918)，那么课程要训练的是想象力本身，还是把想象转成可验证规格的能力？
-- 讲者一方面要求学生禁止古法编程 [15:00](https://www.bilibili.com/video/BV1pb8o6yE8f?t=900)，一方面强调软件工程 gap 与架构设计 [1:22:24](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4944)，两者在课程作业中如何具体区分？
-- 讲者称 AI 的第一反应是“做题家”、不会先设计 DSL [1:36:26](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5786)，但又说好的工程品位可以被训练出来 [1:37:20](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5840)，训练路径是什么？
-- 讲者用“人月神话”类比“投入更多 token 只会让它更失败” [1:31:17](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5477)，这一类比在什么条件下成立、在什么条件下不成立？
-- 讲者提出“软件生存 100 年”的夸张说法并称 GPT5.6 也还不知道 [1:20:50](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4850)，这与课程强调的“演化”研究领域如何衔接 [1:34:01](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5641)？
-
-## 待核实
-
-- “PC GR8800”是否为 1975 年第一台 PC 的准确型号 [00:33](https://www.bilibili.com/video/BV1pb8o6yE8f?t=33)。
-- “你可以坐牢，AI 不能”一句的原始语义 [07:35](https://www.bilibili.com/video/BV1pb8o6yE8f?t=455)。
-- “杀死大学所有人”为讲者原话，具体所指需结合上下文确认 [11:24](https://www.bilibili.com/video/BV1pb8o6yE8f?t=684)。
-- “GPT5.6S”“GPT5.6Sol”“5.3”“智朴”“Cloud Fable”“GM”“Deepseek V4 Pro”等模型名称与版本号，转写中多处不一致，需核实 [09:55](https://www.bilibili.com/video/BV1pb8o6yE8f?t=595) [1:19:23](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4763) [1:38:20](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5900)。
-- “GCLVM”是否为某模型或工具名 [23:52](https://www.bilibili.com/video/BV1pb8o6yE8f?t=1432)。
-- “walkbody”是否为某 agent 产品名 [27:19](https://www.bilibili.com/video/BV1pb8o6yE8f?t=1639)。
-- “Pi”作为课上所选 agent 的产品名与官网信息 [30:53](https://www.bilibili.com/video/BV1pb8o6yE8f?t=1853) [50:27](https://www.bilibili.com/video/BV1pb8o6yE8f?t=3027)。
-- “微臣/微尘”作为 agent 自称助教名的准确写法 [31:13](https://www.bilibili.com/video/BV1pb8o6yE8f?t=1873)。
-- “教学师傅”的语义 [32:47](https://www.bilibili.com/video/BV1pb8o6yE8f?t=1967)。
-- “Qemail”是否为 QEMU [33:59](https://www.bilibili.com/video/BV1pb8o6yE8f?t=2039)。
-- “Ermas”是否为 Hermes 等产品名 [38:56](https://www.bilibili.com/video/BV1pb8o6yE8f?t=2336)。
-- “Matt Polkow”人名拼写 [45:47](https://www.bilibili.com/video/BV1pb8o6yE8f?t=2747)。
-- “SkillHub”平台名 [51:33](https://www.bilibili.com/video/BV1pb8o6yE8f?t=3093)。
-- “菊亚的 AI 早报”名称 [1:01:34](https://www.bilibili.com/video/BV1pb8o6yE8f?t=3694)。
-- “Emily”是否为某现象级产品名 [1:02:44](https://www.bilibili.com/video/BV1pb8o6yE8f?t=3764)。
-- “EVIO”是否为算分脚本的准确名称 [1:07:57](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4077)。
-- “千万 3.8”“欧拉玛”所指的本地 27B 模型与工具 [1:08:39](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4119)。
-- “WineFab”项目名 [1:14:12](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4452)。
-- “Brother Use”是否为 Browser Use [1:16:31](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4591)。
-- “QRGEN”“QRG”是否为同一名称的不同转写 [1:17:27](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4647) [1:38:14](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5894)。
-- “INFR”“TireLong”是否为某中间语言或编译相关术语 [1:21:20](https://www.bilibili.com/video/BV1pb8o6yE8f?t=4880)。
-- “AI4S”“ESC4AR”是否为软件工程研究领域的准确缩写 [1:34:06](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5646)。
-- “The mythical nine months”应为 The Mythical Man-Month，转写有误 [1:30:49](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5449)。
-- “Cloud Max”是否为某产品名 [1:39:12](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5952)。
-- “五点六点六点”所指的模型版本 [1:39:35](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5975)。
-- “金修过的版本”应为“精修过的版本” [1:39:54](https://www.bilibili.com/video/BV1pb8o6yE8f?t=5994)。
-
-## 我的理解
 
 > 待作者补充。
