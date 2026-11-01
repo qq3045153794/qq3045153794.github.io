@@ -55,6 +55,12 @@ const reading = defineCollection({
 			status: z.enum(["want", "reading", "finished", "paused", "abandoned"]).default("reading"),
 			rating: z.number().min(1).max(5).optional(),
 			sourceURL: z.url().optional(),
+			sourcePlatform: z.enum(["bilibili", "youtube", "other"]).optional(),
+			sourceId: z.string().optional(),
+			sourcePublishedAt: z.coerce.date().optional(),
+			videoDuration: z.number().int().positive().optional(),
+			transcriptModel: z.string().optional(),
+			generatedBy: z.string().optional(),
 			coverImage: z
 				.object({
 					alt: z.string(),
