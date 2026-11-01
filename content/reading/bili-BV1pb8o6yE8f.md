@@ -13,7 +13,7 @@ sourcePublishedAt: 2026-08-27
 videoDuration: 6000
 transcriptModel: "large-v3-turbo"
 generatedBy: hermes-local-whisper
-draft: true
+draft: false
 ---
 
 > 来源：[B站视频](https://www.bilibili.com/video/BV1pb8o6yE8f) · UP主：绿导师原谅你了 · 时长：1:40:00
