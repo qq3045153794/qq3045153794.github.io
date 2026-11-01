@@ -13,7 +13,7 @@ sourcePublishedAt: 2026-09-01
 videoDuration: 5906
 transcriptModel: "large-v3-turbo"
 generatedBy: hermes-local-whisper
-draft: false
+draft: true
 ---
 
 > 来源：[B站视频](https://www.bilibili.com/video/BV1CQt365EzW) · UP主：绿导师原谅你了 · 时长：1:38:26
@@ -159,33 +159,6 @@ flowchart TD
 - 讲述者警示“墙内是超人、墙外是动物世界” [1:38:10](https://www.bilibili.com/video/BV1CQt365EzW?t=5890)，并说需要思考怎样防止这件事情到来 [1:38:14](https://www.bilibili.com/video/BV1CQt365EzW?t=5894)；个体学习者和教育者当下能做的具体动作是什么？
 - 讲述者认为发表和评审体系很快就要崩溃，因为 AI Slop 大量涌入 community [1:08:48](https://www.bilibili.com/video/BV1CQt365EzW?t=4128) [1:09:01](https://www.bilibili.com/video/BV1CQt365EzW?t=4141)；交叉验证 [59:51](https://www.bilibili.com/video/BV1CQt365EzW?t=3591) 与“站在人类已知知识边界”的 grounding [1:01:04](https://www.bilibili.com/video/BV1CQt365EzW?t=3664) 能否成为评审流程的常规环节？
 
-## 待核实
-
-- [00:00](https://www.bilibili.com/video/BV1CQt365EzW?t=0) “深圳式转件工程”疑似识别错误，可能为“生成式软件工程”；“ChatGPG”应为 ChatGPT。
-- [02:28](https://www.bilibili.com/video/BV1CQt365EzW?t=148) “Codecode”疑似识别错误，具体所指需确认。
-- [03:48](https://www.bilibili.com/video/BV1CQt365EzW?t=228) “Cloud OPPOS 4.5”应为 Claude Opus 4.5。
-- [07:09](https://www.bilibili.com/video/BV1CQt365EzW?t=429) “System Promptor”应为 System Prompt；“整个开源的框条”语义需确认。
-- [08:37](https://www.bilibili.com/video/BV1CQt365EzW?t=517) “内伦加载”可能为“内容加载”；[08:55](https://www.bilibili.com/video/BV1CQt365EzW?t=535) “绘画的历史”可能为“会话的历史”。
-- [11:03](https://www.bilibili.com/video/BV1CQt365EzW?t=663) “非凡学习法”应为费曼学习法；[11:40](https://www.bilibili.com/video/BV1CQt365EzW?t=700) “YOLO 模的”应为 YOLO 模式。
-- [13:11](https://www.bilibili.com/video/BV1CQt365EzW?t=791) “LS-L”可能为 ls -l；[16:18](https://www.bilibili.com/video/BV1CQt365EzW?t=978) “有些-IR 这样的选项”可能为 -I 等编译选项；[16:53](https://www.bilibili.com/video/BV1CQt365EzW?t=1013) “杀箱内”应为沙箱内。
-- [17:07](https://www.bilibili.com/video/BV1CQt365EzW?t=1027) “paster”应为 parser；[21:23](https://www.bilibili.com/video/BV1CQt365EzW?t=1283) “很大的票意”应为漂移。
-- [22:57](https://www.bilibili.com/video/BV1CQt365EzW?t=1377) “一品飞车”可能为某赛车游戏名；[24:16](https://www.bilibili.com/video/BV1CQt365EzW?t=1456) “self campaign”语义需确认；[24:25](https://www.bilibili.com/video/BV1CQt365EzW?t=1465) “raw sum”应为 raw prompt。
-- [26:24](https://www.bilibili.com/video/BV1CQt365EzW?t=1584) “Deep Seek V4 Flash”可能为 DeepSeek V4 Flash；[28:11](https://www.bilibili.com/video/BV1CQt365EzW?t=1691) “exterminate”可能为 terminal；[28:34](https://www.bilibili.com/video/BV1CQt365EzW?t=1714) “关不掉了”上下文语义需确认。
-- [30:24](https://www.bilibili.com/video/BV1CQt365EzW?t=1824) “短视频女主”转写结尾不完整，语义需确认。
-- [31:24](https://www.bilibili.com/video/BV1CQt365EzW?t=1884) “Kimi K3”可能识别有误，需确认模型名称；[31:28](https://www.bilibili.com/video/BV1CQt365EzW?t=1888) “OpenAR”应为 OpenAI。
-- [34:31](https://www.bilibili.com/video/BV1CQt365EzW?t=2071) “Church Tuning Thesis”应为 Church-Turing Thesis；[37:44](https://www.bilibili.com/video/BV1CQt365EzW?t=2264) “chat GPT”应为 ChatGPT；[38:23](https://www.bilibili.com/video/BV1CQt365EzW?t=2303) “Chall of Sol”应为 chain of thought。
-- [40:08](https://www.bilibili.com/video/BV1CQt365EzW?t=2408) 诗句文字可能识别有误（“鸡锥二路穿陵舞”“学幻六珠”“共识鼠院中”“九鸡争米素”“争如月下老牛布”）；[42:40](https://www.bilibili.com/video/BV1CQt365EzW?t=2560) “江湖游泳渡河波涛汹涌泪流满溢”等诗句文字可能识别有误。
-- [44:06](https://www.bilibili.com/video/BV1CQt365EzW?t=2646) “GP5.6”应为 GPT5.6；[44:31](https://www.bilibili.com/video/BV1CQt365EzW?t=2671) “Chair of Thoughts”应为 chain of thought；[48:23](https://www.bilibili.com/video/BV1CQt365EzW?t=2903) “疾病飞车”应为“极品飞车”。
-- [51:01](https://www.bilibili.com/video/BV1CQt365EzW?t=3061) “ChatGPT 3.54”应为 ChatGPT 3.5；[51:33](https://www.bilibili.com/video/BV1CQt365EzW?t=3093) “chall of salt”应为 chain of thought；[52:07](https://www.bilibili.com/video/BV1CQt365EzW?t=3127) “verifer”应为 verifier；[53:47](https://www.bilibili.com/video/BV1CQt365EzW?t=3227) “agency.md”可能应为 agents.md。
-- [57:50](https://www.bilibili.com/video/BV1CQt365EzW?t=3470) “车窟的话”识别不清；[58:20](https://www.bilibili.com/video/BV1CQt365EzW?t=3500) “强头草”应为“墙头草”；[1:00:42](https://www.bilibili.com/video/BV1CQt365EzW?t=3642) “stack route”待核实具体所指；[1:00:46](https://www.bilibili.com/video/BV1CQt365EzW?t=3646) “这还用看吗”前后文待核实。
-- [1:02:24](https://www.bilibili.com/video/BV1CQt365EzW?t=3744) “HCMD”名称可能识别错误；[1:04:54](https://www.bilibili.com/video/BV1CQt365EzW?t=3894) “chain of salt”疑为 chain of thought 的误识别。
-- [1:11:57](https://www.bilibili.com/video/BV1CQt365EzW?t=4317) “Commerce Science”疑为 Computer Science 的误识别；[1:12:42](https://www.bilibili.com/video/BV1CQt365EzW?t=4362) “母系单遗产”疑为“母系单遗传”。
-- [1:16:00](https://www.bilibili.com/video/BV1CQt365EzW?t=4560) “影看”疑为“愿景”或类似词；[1:16:03](https://www.bilibili.com/video/BV1CQt365EzW?t=4563) “implantation”疑为 implementation；[1:17:16](https://www.bilibili.com/video/BV1CQt365EzW?t=4636) “急品飞车”疑为“极品飞车”。
-- [1:22:02](https://www.bilibili.com/video/BV1CQt365EzW?t=4922) “好的蛋白”疑为“好的模板”或类似词；[1:22:16](https://www.bilibili.com/video/BV1CQt365EzW?t=4936) “上小闻”疑为“上下文”；[1:24:41](https://www.bilibili.com/video/BV1CQt365EzW?t=5081) “上海里面”疑为“上下文里面”；[1:29:45](https://www.bilibili.com/video/BV1CQt365EzW?t=5385) “吹道”疑为“trade-off”或“权衡”。
-- [1:26:42](https://www.bilibili.com/video/BV1CQt365EzW?t=5202) “原汤化原石”疑为“原汤化原食”的误识别。
-- [1:32:31](https://www.bilibili.com/video/BV1CQt365EzW?t=5551) “Tripsot”疑似识别错误，需确认具体工具/方法名称；[1:33:11](https://www.bilibili.com/video/BV1CQt365EzW?t=5591) “pengal hierarchy”可能指 polynomial hierarchy；[1:33:36](https://www.bilibili.com/video/BV1CQt365EzW?t=5616) “3Set”可能指 3SAT。
-- [1:34:23](https://www.bilibili.com/video/BV1CQt365EzW?t=5663) “子涵”人名示例，转写中亦出现“子函”写法（[1:35:13](https://www.bilibili.com/video/BV1CQt365EzW?t=5713)），需确认统一写法；[1:35:51](https://www.bilibili.com/video/BV1CQt365EzW?t=5751) “美举”疑似“枚举”；[1:36:09](https://www.bilibili.com/video/BV1CQt365EzW?t=5769) “试镜”疑似“诗经”；[1:36:13](https://www.bilibili.com/video/BV1CQt365EzW?t=5773) “算力换之力”疑似“算力换智力”；[1:36:34](https://www.bilibili.com/video/BV1CQt365EzW?t=5794) “destroint”需确认原词；[1:37:46](https://www.bilibili.com/video/BV1CQt365EzW?t=5866) “弃堵墙”疑似“砌堵墙”。
-- [1:31:35](https://www.bilibili.com/video/BV1CQt365EzW?t=5495) “指令上海文”疑似“指令上文”的识别错误。
 
 ## 我的理解
 
