@@ -14,7 +14,7 @@ sourcePublishedAt: 2026-09-01
 videoDuration: 5906
 transcriptModel: "large-v3-turbo"
 generatedBy: hermes-local-whisper
-draft: true
+draft: false
 ---
 
 > 来源：[B站视频](https://www.bilibili.com/video/BV1CQt365EzW) · UP主：绿导师原谅你了 · 时长：1:38:26
