@@ -1,0 +1,62 @@
+name: Open PR for AI drafts
+
+on:
+  push:
+    branches:
+      - "ai/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-pr:
+    name: Open draft pull request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Create pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          branch="${GITHUB_REF_NAME}"
+          existing="$(gh pr list --head "$branch" --state open --json number --jq 'length')"
+          if [ "$existing" != "0" ]; then
+            echo "An open pull request already exists for $branch."
+            exit 0
+          fi
+
+          changed="$(git diff --name-only "origin/main...HEAD" | sed -n '1,30p')"
+          cat > /tmp/ai-pr-body.md <<BODY
+          ## AI 草稿
+
+          该 Pull Request 由 Hermes 推送的分支自动创建。
+
+          ### 修改文件
+
+          \`\`\`text
+          ${changed}
+          \`\`\`
+
+          ### 审阅清单
+
+          - [ ] 事实、引用和数据已核实
+          - [ ] 没有编造来源或运行结果
+          - [ ] 读书笔记没有大段复制原文
+          - [ ] 语气符合 \`STYLE.md\`
+          - [ ] 构建和内部链接检查通过
+          - [ ] 可以合并并发布
+
+          > 该 PR 默认以 draft 状态创建。完成审阅后再标记为 ready。
+          BODY
+
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --draft \
+            --title "AI 草稿：${branch#ai/}" \
+            --body-file /tmp/ai-pr-body.md
