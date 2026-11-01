@@ -2,7 +2,7 @@ import type { APIContext, InferGetStaticPropsType } from "astro";
 import satori, { type SatoriOptions } from "satori";
 import sharp from "sharp";
 import NotoSansSC from "@/assets/NotoSansSC-Regular.otf";
-import { getAllPosts, getAllReadings } from "@/data/content";
+import { getAllNotes, getAllPosts } from "@/data/content";
 import { getFormattedDate } from "@/utils/date";
 import { readCache, writeToCache } from "./_cacheUtil";
 import { ogMarkup } from "./_ogMarkup";
@@ -51,7 +51,7 @@ export async function GET(context: APIContext) {
 }
 
 export async function getStaticPaths() {
-	const [posts, readings] = await Promise.all([getAllPosts(), getAllReadings()]);
+	const [posts, notes] = await Promise.all([getAllPosts(), getAllNotes()]);
 
 	return [
 		...posts
@@ -63,13 +63,16 @@ export async function getStaticPaths() {
 					title: post.data.title,
 				},
 			})),
-		...readings
-			.filter(({ data }) => !data.ogImage)
-			.map((reading) => ({
-				params: { slug: `reading/${reading.id}` },
+		...notes
+			.filter(
+				({ data }) =>
+					!data.ogImage && (data.kind === "reading" || data.kind === "video"),
+			)
+			.map((note) => ({
+				params: { slug: `notes/${note.id}` },
 				props: {
-					pubDate: reading.data.updatedDate ?? reading.data.publishDate,
-					title: reading.data.title,
+					pubDate: note.data.updatedDate ?? note.data.publishDate,
+					title: note.data.title,
 				},
 			})),
 	];

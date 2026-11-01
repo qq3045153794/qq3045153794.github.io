@@ -2,6 +2,7 @@
 title: "视频笔记：提示词工程 [02-Raw/26生成式软件工程/NJU]"
 description: "本讲把提示词工程重新定义为上下文工程，围绕写清意图、约束和验证信号，结合注意力机制、思维链与可验证性解释模型行为，并总结可迁移的 Agent 使用方法。"
 publishDate: 2026-11-01
+kind: video
 tags: ["bilibili", "video", "视频笔记"]
 format: video
 status: finished

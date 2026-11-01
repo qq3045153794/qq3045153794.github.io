@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Saber",
 	// Used as the default description meta property and webmanifest description
-	description: "文章、学习笔记与读书笔记",
+	description: "技术文章与学习笔记",
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
 	lang: "zh-CN",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -35,7 +35,6 @@ export const siteConfig: SiteConfig = {
 export const menuLinks: { path: string; title: string }[] = [
 	{ path: "/posts/", title: "文章" },
 	{ path: "/notes/", title: "笔记" },
-	{ path: "/reading/", title: "读书" },
 	{ path: "/archive/", title: "归档" },
 	{ path: "/tags/", title: "标签" },
 	{ path: "/about/", title: "关于" },

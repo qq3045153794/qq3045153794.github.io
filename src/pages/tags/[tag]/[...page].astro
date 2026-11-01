@@ -24,7 +24,7 @@ const { tag } = Astro.params;
 const tagMeta = await getTagMeta(tag);
 const TagContent = tagMeta ? (await render(tagMeta)).Content : null;
 const meta = {
-	description: tagMeta?.data.description ?? `包含标签 ${tag} 的文章、笔记和读书笔记`,
+	description: tagMeta?.data.description ?? `包含标签 ${tag} 的文章和笔记`,
 	title: tagMeta?.data.title ?? `标签：${tag}`,
 };
 const paginationProps = {

@@ -1,0 +1,18 @@
+---
+const target = "/notes/";
+const canonical = new URL(target, Astro.site);
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="0; url=/notes/" http-equiv="refresh" />
+		<link href={canonical} rel="canonical" />
+		<meta content="noindex" name="robots" />
+		<title>笔记已合并</title>
+	</head>
+	<body>
+		<p>读书笔记已合并到 <a href="/notes/">笔记</a>。</p>
+	</body>
+</html>

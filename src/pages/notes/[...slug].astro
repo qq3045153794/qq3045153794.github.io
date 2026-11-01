@@ -14,9 +14,14 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { note } = Astro.props;
+const richNote = note.data.kind === "reading" || note.data.kind === "video";
+const articleDate =
+	(note.data.updatedDate ?? note.data.publishDate).toISOString();
 const meta = {
+	articleDate,
 	description:
 		note.data.description || `发布于 ${note.data.publishDate.toLocaleDateString("zh-CN")} 的笔记`,
+	ogImage: richNote ? `/og-image/notes/${note.id}.png` : undefined,
 	title: note.data.title,
 };
 ---

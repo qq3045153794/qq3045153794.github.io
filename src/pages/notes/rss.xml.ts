@@ -7,7 +7,7 @@ export const GET = async () => {
 
 	return rss({
 		title: `${siteConfig.title} · 笔记`,
-		description: "短笔记、TIL、摘录、随想和想法",
+		description: "学习笔记、读书笔记、视频笔记和日常记录",
 		site: import.meta.env.SITE,
 		items: notes.map((note) => ({
 			title: note.data.title,

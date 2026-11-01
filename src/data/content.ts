@@ -1,10 +1,8 @@
 import { type CollectionEntry, getCollection } from "astro:content";
+import { noteKindLabels, type NoteKind } from "@/utils/note";
 
-export type ContentKind = "post" | "note" | "reading";
-export type ContentEntry =
-	| CollectionEntry<"post">
-	| CollectionEntry<"note">
-	| CollectionEntry<"reading">;
+export type ContentKind = "post" | "note";
+export type ContentEntry = CollectionEntry<"post"> | CollectionEntry<"note">;
 
 export interface ContentItem {
 	kind: ContentKind;
@@ -21,12 +19,6 @@ export interface ContentItem {
 	pinned: boolean;
 }
 
-const kindLabels: Record<ContentKind, string> = {
-	post: "文章",
-	note: "笔记",
-	reading: "读书笔记",
-};
-
 function isVisible(data: { draft: boolean; publishDate: Date }): boolean {
 	if (!import.meta.env.PROD) return true;
 	return !data.draft && data.publishDate.getTime() <= Date.now();
@@ -35,9 +27,12 @@ function isVisible(data: { draft: boolean; publishDate: Date }): boolean {
 function normalizeEntry(kind: ContentKind, entry: ContentEntry): ContentItem {
 	const data = entry.data;
 
+	const noteData = kind === "note" ? (data as CollectionEntry<"note">["data"]) : null;
+	const kindLabel = noteData ? noteKindLabels[noteData.kind as NoteKind] : "文章";
+
 	return {
 		kind,
-		kindLabel: kindLabels[kind],
+		kindLabel,
 		entry,
 		id: entry.id,
 		title: data.title,
@@ -45,7 +40,7 @@ function normalizeEntry(kind: ContentKind, entry: ContentEntry): ContentItem {
 		publishDate: data.publishDate,
 		updatedDate: data.updatedDate,
 		tags: data.tags ?? [],
-		url: `/${kind === "post" ? "posts" : kind === "note" ? "notes" : "reading"}/${entry.id}/`,
+		url: `/${kind === "post" ? "posts" : "notes"}/${entry.id}/`,
 		draft: data.draft ?? false,
 		pinned: "pinned" in data ? Boolean(data.pinned) : false,
 	};
@@ -59,21 +54,12 @@ export async function getAllNotes(): Promise<CollectionEntry<"note">[]> {
 	return await getCollection("note", ({ data }) => isVisible(data));
 }
 
-export async function getAllReadings(): Promise<CollectionEntry<"reading">[]> {
-	return await getCollection("reading", ({ data }) => isVisible(data));
-}
-
 export async function getAllContent(): Promise<ContentItem[]> {
-	const [posts, notes, readings] = await Promise.all([
-		getAllPosts(),
-		getAllNotes(),
-		getAllReadings(),
-	]);
+	const [posts, notes] = await Promise.all([getAllPosts(), getAllNotes()]);
 
 	return [
 		...posts.map((entry) => normalizeEntry("post", entry)),
 		...notes.map((entry) => normalizeEntry("note", entry)),
-		...readings.map((entry) => normalizeEntry("reading", entry)),
 	].sort((a, b) => b.publishDate.getTime() - a.publishDate.getTime());
 }
 

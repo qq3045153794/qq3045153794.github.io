@@ -2,6 +2,7 @@
 title: "视频笔记：欢迎来到未来 [01-Raw/26生成式软件工程/NJU]"
 description: "讲者以“生成式软件工程”课程为框架，主张 AI Agent 已把“完成任务”的门槛大幅拉低，人的价值转向带着 AI 做 AI 做不到的事、补上从意图到规格到实现之间的软件工程 gap，并用大量个人实践案例论证这一判断。"
 publishDate: 2026-11-01
+kind: video
 tags: ["bilibili", "video", "视频笔记"]
 format: video
 status: finished

@@ -7,7 +7,7 @@ const allContent = await getAllContent();
 const grouped = groupContentByYear(allContent);
 const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
 const meta = {
-	description: "按年份浏览全部文章、笔记和读书笔记",
+	description: "按年份浏览全部文章和笔记",
 	title: "归档",
 };
 ---

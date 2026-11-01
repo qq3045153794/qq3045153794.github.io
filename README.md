@@ -1,6 +1,6 @@
 # Saber 的技术笔记
 
-文章、学习笔记和读书笔记的公开内容仓库。
+技术文章和统一学习笔记的公开内容仓库。
 
 - 站点：https://qq3045153794.github.io/
 - 框架：Astro 7
@@ -13,8 +13,7 @@
 ```text
 content/
 ├── posts/      完整文章
-├── notes/      短笔记、TIL、摘录
-├── reading/    书籍、论文、文章、课程笔记
+├── notes/      学习笔记、读书笔记、视频笔记、TIL、摘录
 └── tags/       标签说明
 ```
 
@@ -70,6 +69,6 @@ Hermes 只能通过分支和 Pull Request 修改内容，不直接发布到 `mai
 Hermes 应遵守：
 
 - 从最新的 `main` 创建 `ai/<slug>` 分支。
-- 按内容类型写入 `content/posts`、`content/notes` 或 `content/reading`。
+- 文章写入 `content/posts`；所有笔记写入 `content/notes`，用 `kind` 区分普通笔记、读书笔记和视频笔记。
 - 推送 `ai/*` 分支后，GitHub Actions 会自动创建 draft Pull Request。
 - 不直接推送 `main`，不自动合并或发布。

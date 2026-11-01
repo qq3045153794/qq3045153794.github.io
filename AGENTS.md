@@ -5,8 +5,7 @@
 ## 内容目录
 
 - `content/posts/`：完整文章、教程、项目复盘。
-- `content/notes/`：短笔记、TIL、摘录、随想、想法。
-- `content/reading/`：书籍、论文、文章、课程和视频的读书笔记。
+- `content/notes/`：所有笔记。用 `kind` 区分 `note`、`til`、`quote`、`link`、`idea`、`reading`、`video`。
 - `content/tags/`：标签页的可选说明。
 - `templates/`：新内容模板，不属于 Astro 内容集合。
 
@@ -27,8 +26,9 @@
 ## 内容分类
 
 - 用户给出一个完整主题、需要论证和结构：优先生成 `post`。
-- 用户只给出一条想法、摘录或短知识：优先生成 `note`。
-- 用户给出书、论文、课程、文章或视频：优先生成 `reading`。
+- 用户只给出一条想法、摘录或短知识：写入 `content/notes`，`kind: note`（或更具体的 `til`、`quote`、`link`、`idea`）。
+- 用户给出书、论文、课程或文章：写入 `content/notes`，`kind: reading`。
+- 用户给出视频：写入 `content/notes`，`kind: video`。
 - 无法判断时，先创建 `note`，不要擅自扩写成长文。
 
 ## Pull Request 要求

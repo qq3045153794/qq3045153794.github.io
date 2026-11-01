@@ -40,19 +40,16 @@ const post = defineCollection({
 
 const note = defineCollection({
 	loader: glob({ base: "./content/notes", pattern: "**/*.{md,mdx}" }),
-	schema: commonContentSchema.extend({
-		kind: z.enum(["note", "til", "quote", "link", "idea"]).default("note"),
-	}),
-});
-
-const reading = defineCollection({
-	loader: glob({ base: "./content/reading", pattern: "**/*.{md,mdx}" }),
 	schema: ({ image }) =>
 		commonContentSchema.extend({
-			description: z.string(),
+			kind: z
+				.enum(["note", "til", "quote", "link", "idea", "reading", "video"])
+				.default("note"),
 			author: z.string().optional(),
-			format: z.enum(["book", "paper", "article", "video", "course"]).default("book"),
-			status: z.enum(["want", "reading", "finished", "paused", "abandoned"]).default("reading"),
+			format: z.enum(["book", "paper", "article", "video", "course"]).optional(),
+			status: z
+				.enum(["want", "reading", "finished", "paused", "abandoned"])
+				.optional(),
 			rating: z.number().min(1).max(5).optional(),
 			sourceURL: z.url().optional(),
 			sourcePlatform: z.enum(["bilibili", "youtube", "other"]).optional(),
@@ -78,4 +75,4 @@ const tag = defineCollection({
 	}),
 });
 
-export const collections = { post, note, reading, tag };
+export const collections = { post, note, tag };

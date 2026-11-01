@@ -5,14 +5,14 @@ import PageLayout from "@/layouts/Base.astro";
 const allContent = await getAllContent();
 const allTags = getUniqueTagsWithCount(allContent);
 const meta = {
-	description: "文章、笔记和读书笔记中的全部标签",
+	description: "文章和笔记中的全部标签",
 	title: "标签",
 };
 ---
 
 <PageLayout meta={meta}>
 	<h1 class="title mb-4">标签</h1>
-	<p class="mb-10 text-muted">标签会聚合文章、笔记和读书笔记。</p>
+	<p class="mb-10 text-muted">标签会聚合文章和各类笔记。</p>
 	<ul class="space-y-4">
 		{
 			allTags.map(([tag, count]) => (

@@ -22,7 +22,7 @@ function slugify(value) {
 }
 
 const slug = slugify(inputSlug || `untitled-${isoDate}`);
-const folder = kind === "post" ? "posts" : kind === "note" ? "notes" : "reading";
+const folder = kind === "post" ? "posts" : "notes";
 const targetDir = join("content", folder);
 const target = join(targetDir, `${slug}.md`);
 
@@ -56,6 +56,7 @@ title: "未命名读书笔记"
 description: "请补充阅读摘要"
 publishDate: ${isoDate}
 tags: []
+kind: reading
 format: book
 status: reading
 author:

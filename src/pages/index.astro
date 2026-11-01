@@ -1,28 +1,22 @@
 ---
 import PostPreview from "@/components/blog/PostPreview.astro";
 import Note from "@/components/note/Note.astro";
-import ReadingPreview from "@/components/reading/ReadingPreview.astro";
 import SocialList from "@/components/SocialList.astro";
-import { getAllNotes, getAllPosts, getAllReadings } from "@/data/content";
+import { getAllNotes, getAllPosts } from "@/data/content";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 
-const [allPosts, allNotes, allReadings] = await Promise.all([
-	getAllPosts(),
-	getAllNotes(),
-	getAllReadings(),
-]);
+const [allPosts, allNotes] = await Promise.all([getAllPosts(), getAllNotes()]);
 const latestPosts = allPosts.sort(collectionDateSort).slice(0, 6);
 const pinnedPosts = latestPosts.filter((post) => post.data.pinned).slice(0, 3);
-const latestNotes = allNotes.sort(collectionDateSort).slice(0, 5);
-const latestReadings = allReadings.sort(collectionDateSort).slice(0, 4);
+const latestNotes = allNotes.sort(collectionDateSort).slice(0, 8);
 ---
 
 <PageLayout meta={{ title: "首页" }}>
 	<section>
 		<h1 class="title mb-6">你好，我是 Saber。</h1>
 		<p class="mb-4 leading-7">
-			这里记录技术文章、学习笔记和读书笔记。内容以 Markdown 保存在 GitHub，
+			这里记录技术文章和学习笔记，包括读书笔记、视频笔记、TIL 和随想。内容以 Markdown 保存在 GitHub，
 			通过 Astro 构建并发布到 GitHub Pages。
 		</p>
 		<p class="mb-4 leading-7 text-muted">
@@ -70,18 +64,4 @@ const latestReadings = allReadings.sort(collectionDateSort).slice(0, 4);
 		)
 	}
 
-	{
-		latestReadings.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title text-accent mb-6 text-xl"><a href="/reading/">读书笔记</a></h2>
-				<ul class="space-y-4" role="list">
-					{latestReadings.map((reading) => (
-						<li class="grid gap-1 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-							<ReadingPreview reading={reading} />
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
 </PageLayout>

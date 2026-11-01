@@ -19,7 +19,7 @@ interface Props {
 
 const { page } = Astro.props;
 const meta = {
-	description: "短笔记、TIL、摘录、随想和想法",
+	description: "学习笔记、读书笔记、视频笔记和日常记录",
 	title: "笔记",
 };
 const paginationProps = {
@@ -37,7 +37,7 @@ const paginationProps = {
 				<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="mdi:rss" />
 			</a>
 		</h1>
-		<p class="mb-12 text-muted">这里放比较短的内容：TIL、摘录、随想和还没长成文章的片段。</p>
+		<p class="mb-12 text-muted">统一收录学习笔记、读书笔记、视频笔记、TIL、摘录和随想。</p>
 		<ul class="space-y-8 text-start">
 			{
 				page.data.map((note) => (

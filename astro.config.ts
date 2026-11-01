@@ -29,7 +29,9 @@ export default defineConfig({
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		icon(),
-		sitemap(),
+		sitemap({
+			filter: (page) => !page.includes("/reading/"),
+		}),
 		mdx(),
 		robotsTxt(),
 		webmanifest({

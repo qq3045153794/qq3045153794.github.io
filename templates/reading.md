@@ -4,6 +4,7 @@ description: "这本书记录了什么，以及为什么值得写笔记"
 publishDate: 2026-11-01
 updatedDate:
 tags: ["reading"]
+kind: reading
 format: book
 status: reading
 author:

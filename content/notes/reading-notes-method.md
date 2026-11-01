@@ -2,6 +2,7 @@
 title: "示例：如何写一条能复用的读书笔记"
 description: "一条长期有效的读书笔记，应该保留来源、问题、关键观点和下一步行动。"
 publishDate: 2026-11-01
+kind: reading
 tags: ["reading", "writing"]
 format: article
 status: finished
