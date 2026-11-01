@@ -1,0 +1,31 @@
+---
+import SocialList from "@/components/SocialList.astro";
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "关于 Saber 和他的技术笔记",
+	title: "关于",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-12">关于</h1>
+	<div class="prose prose-sm prose-cactus max-w-none">
+		<p>我是 Saber，这里是我的公开学习档案。</p>
+		<p>
+			这个站点保存三类内容：完整的技术文章、较短的学习笔记，以及书籍和论文的读书笔记。
+			所有内容都以 Markdown 形式保存在 GitHub 仓库中，使用 Git 记录修改历史。
+		</p>
+		<p>
+			站点使用 Astro 构建，通过 GitHub Actions 部署到 GitHub Pages。
+			搜索使用 Pagefind，不依赖后端服务。
+		</p>
+		<h2>写作方式</h2>
+		<p>
+			Hermes 可以协助捕获想法、整理资料、生成提纲、起草和润色，但不能直接发布到主分支。
+			每次 AI 修改都会经过 Pull Request 和人工审阅。
+		</p>
+		<h2>找到我</h2>
+		<SocialList />
+	</div>
+</PageLayout>

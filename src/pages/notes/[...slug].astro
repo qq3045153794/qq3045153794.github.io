@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from "astro";
+import Note from "@/components/note/Note.astro";
+import { getAllNotes } from "@/data/content";
+import PageLayout from "@/layouts/Base.astro";
+import { githubEditUrl } from "@/utils/github";
+
+export const getStaticPaths = (async () => {
+	const notes = await getAllNotes();
+	return notes.map((note) => ({
+		params: { slug: note.id },
+		props: { note },
+	}));
+}) satisfies GetStaticPaths;
+
+const { note } = Astro.props;
+const meta = {
+	description:
+		note.data.description || `发布于 ${note.data.publishDate.toLocaleDateString("zh-CN")} 的笔记`,
+	title: note.data.title,
+};
+---
+
+<PageLayout meta={meta}>
+	<Note as="h1" note={note} />
+	<p class="mt-12 text-sm text-muted">
+		<a class="cactus-link" href={githubEditUrl("notes", note.id)}>在 GitHub 上编辑这条笔记</a>
+	</p>
+</PageLayout>

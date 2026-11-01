@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import { getAllPosts, getSeriesPosts, getUniqueSeries } from "@/data/content";
+import PageLayout from "@/layouts/Base.astro";
+
+export const getStaticPaths = (async () => {
+	const posts = await getAllPosts();
+	return getUniqueSeries(posts).map((series) => ({
+		params: { series },
+		props: { series },
+	}));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { series } = Astro.props;
+const posts = getSeriesPosts(await getAllPosts(), series);
+const meta = {
+	description: `系列「${series}」中的全部文章`,
+	title: `系列：${series}`,
+};
+---
+
+<PageLayout meta={meta}>
+	<nav class="mb-8" aria-label="面包屑">
+		<a class="text-accent" href="/posts/">文章</a>
+		<span class="mx-2">/</span>
+		<span>系列</span>
+	</nav>
+	<h1 class="title mb-4">系列：{series}</h1>
+	<p class="mb-12 text-muted">共 {posts.length} 篇，按发布时间排序。</p>
+	<ol class="space-y-4">
+		{
+			posts.map((post) => (
+				<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+					<PostPreview post={post} />
+				</li>
+			))
+		}
+	</ol>
+</PageLayout>

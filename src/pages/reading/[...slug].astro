@@ -1,0 +1,23 @@
+---
+import { render } from "astro:content";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import { getAllReadings } from "@/data/content";
+import ReadingLayout from "@/layouts/ReadingPost.astro";
+
+export const getStaticPaths = (async () => {
+	const readings = await getAllReadings();
+	return readings.map((reading) => ({
+		params: { slug: reading.id },
+		props: { reading },
+	}));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { reading } = Astro.props;
+const { Content } = await render(reading);
+---
+
+<ReadingLayout reading={reading}>
+	<Content />
+</ReadingLayout>

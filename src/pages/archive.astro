@@ -1,0 +1,35 @@
+---
+import ContentPreview from "@/components/content/ContentPreview.astro";
+import { getAllContent, groupContentByYear } from "@/data/content";
+import PageLayout from "@/layouts/Base.astro";
+
+const allContent = await getAllContent();
+const grouped = groupContentByYear(allContent);
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+const meta = {
+	description: "按年份浏览全部文章、笔记和读书笔记",
+	title: "归档",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-4">归档</h1>
+	<p class="mb-12 text-muted">共 {allContent.length} 条公开内容。</p>
+	{
+		years.map((year) => (
+			<section class="mb-16">
+				<h2 class="title mb-5 flex items-baseline gap-3 text-xl">
+					{year}
+					<span class="text-sm font-normal text-muted">{grouped[year]?.length ?? 0} 条</span>
+				</h2>
+				<ul class="space-y-4">
+					{grouped[year]?.map((item) => (
+						<li class="grid gap-1 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+							<ContentPreview item={item} />
+						</li>
+					))}
+				</ul>
+			</section>
+		))
+	}
+</PageLayout>

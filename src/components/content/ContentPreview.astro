@@ -1,0 +1,19 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+import FormattedDate from "@/components/FormattedDate.astro";
+import type { ContentItem } from "@/data/content";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+	item: ContentItem;
+	withDesc?: boolean;
+};
+
+const { as: Tag = "div", item, withDesc = false } = Astro.props;
+---
+
+<FormattedDate class="text-muted min-w-30 font-semibold" date={item.publishDate} />
+<Tag class="flex flex-wrap items-baseline gap-2">
+	<span class="rounded border border-current px-1.5 py-0.5 text-xs text-muted">{item.kindLabel}</span>
+	<a class="cactus-link" href={item.url}>{item.title}</a>
+</Tag>
+{withDesc && item.description && <q class="line-clamp-3 text-muted italic">{item.description}</q>}

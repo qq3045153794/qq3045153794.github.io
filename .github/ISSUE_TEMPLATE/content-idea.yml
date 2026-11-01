@@ -1,0 +1,33 @@
+name: 内容想法
+description: 记录一篇文章、笔记或读书笔记的起点
+title: "[想法] "
+labels: ["content-idea"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 内容类型
+      options:
+        - 文章
+        - 笔记
+        - 读书笔记
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 核心想法
+      description: 想解决什么问题，或者想记住什么？
+      placeholder: 用几句话描述，不需要先写成完整文章。
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 已有资料
+      description: 链接、书、论文、代码或相关笔记。
+  - type: textarea
+    id: next
+    attributes:
+      label: 希望 Hermes 做什么
+      placeholder: 例如：整理提纲、补充背景、生成草稿、检查事实、润色。
