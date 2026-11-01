@@ -1,0 +1,47 @@
+---
+---
+
+<script>
+	const blocks: Array<{ block: Element; source: string }> = [];
+	for (const pre of document.querySelectorAll<HTMLElement>(
+		'pre[data-language="mermaid"]',
+	)) {
+		blocks.push({
+			block: pre.closest(".expressive-code") ?? pre,
+			source: pre.querySelector("code")?.textContent ?? pre.textContent ?? "",
+		});
+	}
+
+	for (const code of document.querySelectorAll<HTMLElement>("code.language-mermaid")) {
+		if (blocks.some(({ block }) => block.contains(code))) continue;
+		blocks.push({
+			block: code.closest(".expressive-code") ?? code.closest("pre") ?? code,
+			source: code.textContent ?? "",
+		});
+	}
+
+	if (blocks.length > 0) {
+		const { default: mermaid } = await import("mermaid");
+		const isDark = document.documentElement.dataset.theme === "dark";
+		mermaid.initialize({
+			startOnLoad: false,
+			securityLevel: "strict",
+			theme: isDark ? "dark" : "default",
+		});
+
+		const diagrams: HTMLElement[] = [];
+		for (const { block, source } of blocks) {
+			const container = document.createElement("div");
+			container.className = "mermaid";
+			container.textContent = source;
+			block.replaceWith(container);
+			diagrams.push(container);
+		}
+
+		try {
+			await mermaid.run({ nodes: diagrams });
+		} catch (error) {
+			console.error("Mermaid rendering failed", error);
+		}
+	}
+</script>

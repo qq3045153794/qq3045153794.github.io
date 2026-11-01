@@ -3,6 +3,7 @@ import "katex/dist/katex.min.css";
 import BaseHead from "@/components/BaseHead.astro";
 import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
+import Mermaid from "@/components/Mermaid.astro";
 import SkipLink from "@/components/SkipLink.astro";
 import ThemeProvider from "@/components/ThemeProvider.astro";
 import { siteConfig } from "@/site.config";
@@ -30,6 +31,7 @@ const {
 		<main id="main">
 			<slot />
 		</main>
+		<Mermaid />
 		<Footer />
 		<script is:inline type="speculationrules">
 			{
