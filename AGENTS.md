@@ -21,7 +21,8 @@
 7. 不擅自修改 `astro.config.ts`、`.github/workflows/`、`package.json` 和内容 schema；这类修改必须由用户明确要求。
 8. 新内容必须符合 `src/content.config.ts` 的 schema。
 9. 写作遵循 `STYLE.md`。
-10. 修改后运行 `pnpm check`、`pnpm build` 和 `pnpm check:links`。
+10. 修改前先切到 `main` 并执行 `git pull --ff-only`；只允许推送 `ai/*` 分支。
+11. 如果本机有 pnpm 和已安装依赖，运行 `pnpm check`、`pnpm build` 和 `pnpm check:links`；否则依赖 PR 上的 GitHub Actions，不得声称本地检查已通过。
 
 ## 内容分类
 

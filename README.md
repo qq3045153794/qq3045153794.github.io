@@ -61,3 +61,15 @@ Hermes 只能通过分支和 Pull Request 修改内容，不直接发布到 `mai
 ## 主题来源
 
 站点基于 MIT License 的 [Astro Cactus](https://github.com/chrismwilliams/astro-theme-cactus) 修改。
+
+
+## Hermes 协同接口
+
+服务器工作目录：`/home/admin/blog`
+
+Hermes 应遵守：
+
+- 从最新的 `main` 创建 `ai/<slug>` 分支。
+- 按内容类型写入 `content/posts`、`content/notes` 或 `content/reading`。
+- 推送 `ai/*` 分支后，GitHub Actions 会自动创建 draft Pull Request。
+- 不直接推送 `main`，不自动合并或发布。
