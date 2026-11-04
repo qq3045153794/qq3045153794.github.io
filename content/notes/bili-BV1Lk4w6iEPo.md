@@ -1,7 +1,7 @@
 ---
 title: "视频笔记：真的存在没有弹窗的APP吗？STEPX Neo给我做了一个….."
 description: "视频以“手机弹窗泛滥”为切入点，演示了 STEPX Neo 手机上运行的大模型原生智能体“接约Amo”（转写用名）如何通过对话把用户想法落地成干净无广告的专属 App 和小游戏，并展示了它在旅行规划等日常事务中的使用方式，主张普通人可以“从我想要”变成“我能造”。"
-publishDate: 2026-11-05
+publishDate: 2026-11-05T00:37:53+08:00
 tags: ["bilibili", "video", "视频笔记"]
 kind: video
 format: video
