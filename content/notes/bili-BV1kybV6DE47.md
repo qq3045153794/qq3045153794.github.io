@@ -19,7 +19,7 @@ draft: false
 
 > 来源：[B站视频](https://www.bilibili.com/video/BV1kybV6DE47) · UP主：绿导师原谅你了 · 时长：1:40:14
 >
-> 本笔记由本地 GPU 转写（large-v3-turbo）和 AI 整理生成。专有名词、数字和事实性断言请结合原视频核对。
+> 本笔记由本地 GPU 转写（large-v3-turbo）和 AI 整理生成。
 
 ## 一句话总结
 
